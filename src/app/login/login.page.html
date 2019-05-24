@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="ion-padding">
+      <div class="text-app">
+        Assoar
+      </div>
+
+      <!--Forms-->
+    <div class="forms">
+      <ion-icon name="person"></ion-icon>
+      E-mail<input type="email" class="form-email" [(ngModel)]="userLogin.email">
+      <ion-icon name="lock" class="icon-senha"></ion-icon>
+      Senha<input type="password" [(ngModel)]="userLogin.password">
+    </div>
+    <button (click)="fazerLogin()"> Login </button>
+      <!--EndForms-->
+    <div class="sub-text" (click)="exibirRegistrar()">
+      Não tem conta? Cadastre-se agora!
+    </div>
+  </div>
+
+</ion-content>
+  
