@@ -10,31 +10,33 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public userLogin: User = {}
-  public userRegister: User = {}
+  public userLogin: User = {};
+  public userRegister: User = {};
   private loading: any;
 
 
   constructor(public router: Router,
-    private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController,
-    private authService: AuthService){}
+              private loadingCtrl: LoadingController,
+              private toastCtrl: ToastController,
+              private authService: AuthService) {}
 
-  exibirRegistrar(){
+  exibirRegistrar() {
     this.router.navigate(['register']);
   }
 
-  async fazerLogin(){
+  async fazerLogin() {
     await this.presentLoading();
 
-    try{
+    try {
       await this.authService.login(this.userLogin);
-      
-    } catch (error){
+    } catch (error) {
       console.error(error);
-
-      this.presentToast(error.message);
-    } finally{
+      if (error.code === 'auth/user-not-found') {
+        this.presentToast('Usuário não encontrado em nosso sistema!');
+      } else {
+        this.presentToast('Por favor, verifique se os campos de email e senha estão preenchidos corretamente!');
+      }
+    } finally {
       this.loading.dismiss();
     }
   }

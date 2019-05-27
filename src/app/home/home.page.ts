@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  constructor(public router: Router){}
 
-  go(){
+export class HomePage {
+  constructor(public router: Router) {}
+
+  go() {
     this.router.navigate(['login']);
   }
-  register(){
+  register() {
     this.router.navigate(['register']);
   }
-
 }

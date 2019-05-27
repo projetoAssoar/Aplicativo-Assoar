@@ -1,21 +1,57 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
 <ion-content>
   <div class="ion-padding">
-      <div class="text-app">
-        Assoar
+    <div class="text-app">ASSOAR</div>
+
+    <section class="forms">
+
+      <div>
+        <ion-row>
+          <ion-col>
+            <label for="c_email">
+              <ion-icon name="person"></ion-icon> E-mail
+            </label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+              <input id="c_email" type="email" class="form-email" [(ngModel)]="userLogin.email">
+          </ion-col>
+        </ion-row>
       </div>
 
-      <!--Forms-->
-    <div class="forms">
-      <ion-icon name="person"></ion-icon>
-      E-mail<input type="email" class="form-email" [(ngModel)]="userLogin.email">
-      <ion-icon name="lock" class="icon-senha"></ion-icon>
-      Senha<input type="password" [(ngModel)]="userLogin.password">
-    </div>
-    <button (click)="fazerLogin()"> Login </button>
-      <!--EndForms-->
+      <div>
+        <ion-row>
+          <ion-col>
+            <label for="c_passwd">
+              <ion-icon name="lock" class="icon-senha"></ion-icon> Senha
+            </label>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <input id="c_passwd" type="password" class="form-senha" [(ngModel)]="userLogin.password">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-row>
+        <ion-col text-center>
+          <button (click)="fazerLogin()" class="btn btn-block btn-login"> LOGIN </button>
+        </ion-col>
+      </ion-row>
+
+    </section>
+
     <div class="sub-text" (click)="exibirRegistrar()">
-      Não tem conta? Cadastre-se agora!
+      Não tem conta? <p style="display: inline; color: rgb(222, 224, 212);">Cadastre-se agora!</p>
     </div>
+    
   </div>
 
 </ion-content>
