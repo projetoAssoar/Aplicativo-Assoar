@@ -9,20 +9,21 @@
     height: 100%;
     background-position: center;
     background-size: cover;
-    padding: 20px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    overflow: scroll;
 }
 
-.logo-app{
-    width: 30%;
-    padding-top: 20%;
-    margin-left: 35%;
+figure > img.logo-assoar{
+    margin-top: 50px;
+    width: 120px;
+    height: 120px;
 }
-.titulo-app{
-    text-align: center;
-    padding-top: 5%;
-    color: #DAE3E5;
-    font-size: 200%;
+figure > figcaption.legenda-logo{
+    color: rgb(224, 224, 224);
+    font-size: 24px;
     font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 button{
