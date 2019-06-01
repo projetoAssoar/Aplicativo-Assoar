@@ -10,8 +10,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public userLogin: User = {};
-  public userRegister: User = {};
+  public userLogin: User = {name};
   private loading: any;
 
 
@@ -34,7 +33,7 @@ export class LoginPage implements OnInit {
       if (error.code === 'auth/user-not-found') {
         this.presentToast('Usuário não encontrado em nosso sistema!');
       } else {
-        this.presentToast('Por favor, verifique se os campos de email e senha estão preenchidos corretamente!');
+        this.presentToast('Por favor, verifique se os campos de e-mail e senha estão preenchidos corretamente!');
       }
     } finally {
       this.loading.dismiss();

@@ -5,6 +5,21 @@
     padding: 0%;
     margin: 0%;
 }
+
+figure > img.logo-assoar{
+    margin-top: 50px;
+    width: 120px;
+    height: 120px;
+}
+
+figure > figcaption.legenda-logo{
+    color: #F17F29;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 30px;
+}
+
 .ion-padding{
     background-image: url('/assets/imgs/2.png');
     width: 100%;
@@ -12,15 +27,6 @@
     background-position: center;
     background-size: cover;
     padding: 20px;
-}
-.text-app{
-    text-align: center;
-    padding-top: 5%;
-    color: #F17F29;
-    font-size: 280%;
-    font-weight: 700;
-    margin: 50px 0px 50px 0px;
-    font-family: 'Noto Sans JP', sans-serif;
 }
 .forms{
     margin: 20px;
@@ -35,7 +41,13 @@ input{
 	background: transparent;
     outline: none;
     margin-bottom: 30px;
+    color: white;
 }
+
+input::placeholder{
+    color: rgb(230, 230, 230);
+}
+
 .form-email:focus{
     border-bottom: 1px solid #F96900;
 }
@@ -44,20 +56,15 @@ input{
 }
 
 .btn-login{
-    margin-top: 30px;
     background-color: #F17F29;
     color: #DCE2C8;
-    font-size: 18px;
-    border-radius: 5px;
-    font-family: 'Noto Sans JP', sans-serif;
 }
 
-.sub-text{
-    margin: 40px 0px 0px 0px;
-    text-align: center;
-    color: #DCE2C8;
+.text-register{
+    margin-top: 20px;
+    color: whitesmoke;
     font-size: 16px;
-    font-weight: 300;
-    padding-top: 20px;
-    font-weight: bolder;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
