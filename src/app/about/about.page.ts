@@ -13,11 +13,11 @@ export class AboutPage implements OnInit {
   ngOnInit() {
   }
 
-  souPaciente(){
+  souPaciente() {
     this.router.navigate(['pacient']);
   }
 
-  souDoador(){
+  souDoador() {
     this.router.navigate(['doador']);
   }
 
