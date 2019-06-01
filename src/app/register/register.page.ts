@@ -10,33 +10,43 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  public userRegister : User = {}
-  public userLogin: User = {}
+  public userRegister: User = {name};
   private loading: any;
 
   constructor(public router: Router,
-    private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController,
-    private authService: AuthService){}
+              private loadingCtrl: LoadingController,
+              private toastCtrl: ToastController,
+              private authService: AuthService) {}
 
-  exibirLogin(){
+  exibirLogin() {
     this.router.navigate(['login']);
   }
 
-  async fazerRegistro(){
-    await this.presentLoading();
+  async fazerRegistro() {
+    // verifica se o campo de nome foi preenchido
+    if (this.userRegister.name.trim() === '') {
+      this.presentToast('Por favor, preencha o campo de nome!');
+    } else { // se foi, tenta realizar o cadastro
+      await this.presentLoading();
+      try {
+        await this.authService.register(this.userRegister);
+        this.router.navigate(['about']);
+      } catch (error) {
+        console.error(error);
 
-    try{
-      await this.authService.register(this.userRegister);
-      this.router.navigate(['about']);
-    } catch (error){
-      console.error(error);
+        // verifica qual código de erro foi retornado
+        if (error.code === 'auth/weak-password'){
+          this.presentToast('Por favor, insira uma senha com mais de 6 caracteres!');
+        } else if (error.message.indexOf('password') !== -1) {
+          this.presentToast('Por favor, insira sua senha!');
+        } else if (error.message.indexOf('email') !== -1) {
+          this.presentToast('Por favor, insira um e-mail válido!');
+        }
 
-      this.presentToast(error.message);
-    } finally{
-      this.loading.dismiss();
+      } finally {
+        this.loading.dismiss();
+      }
     }
-    
   }
 
   async presentLoading() {
