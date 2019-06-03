@@ -1,9 +1,74 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pacient</ion-title>
-  </ion-toolbar>
-</ion-header>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+  
+  <ion-content>
+    <main class="ion-padding">
+      <figure class="text-center">
+        <img src="/assets/imgs/pacient.png" alt="Logo ASSOAR" class="logo-assoar">
+        <figcaption class='legenda-logo'>Paciente</figcaption>
+      </figure>
 
-<ion-content>
+      <!--Lista com os equipamentos-->
+      <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-list-header>Escolha o Equipamento</ion-list-header>
+                <ion-item>
+                    <ion-label color="danger">Equipamentos</ion-label>
+                    <ion-select multiple="true" cancelText="Cancelar" okText="Okay!">
+                      <ion-select-option value="cadeira-rodas">Cadeira de Rodas</ion-select-option>
+                      <ion-select-option value="cama-banho">Cama de Banho</ion-select-option>
+                      <ion-select-option value="muletas">Muletas</ion-select-option>
+                      <ion-select-option value="remedio">Remédio</ion-select-option>
+                    </ion-select>
+                 </ion-item>       
+            </ion-list>
+        </ion-col>
+      </ion-row>
 
-</ion-content>
+
+      <!--Responsavel se Tiver-->
+      <div class="input-responsavel">
+          <ion-row>
+            <ion-col>
+                <label for="c_responsavel_paciente">
+                    <ion-icon name="add-circle"></ion-icon> Responsável
+                </label>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+              <ion-col>
+                <input id="c_responsavel_paciente" type="text" class="form-responsavel" [(ngModel)]="userRegister.responsavel" placeholder="Responsável (Se Estiver)">
+              </ion-col>
+          </ion-row>
+        </div>
+
+        <!--Tempo de Empréstimo-->
+      <div class="input-devolucao">
+          <ion-row>
+            <ion-col>
+                <label for="c_data_paciente">
+                    <ion-icon name="add-circle"></ion-icon> Data de Devolução do Equipamento
+                </label>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+              <ion-col>
+                <input id="c_data_paciente" type="data" class="form-data" [(ngModel)]="userRegister.data" placeholder="Data de Devolução">
+              </ion-col>
+          </ion-row>
+        </div>
+  
+      <!--Botão-->
+      <div> <!-- botão final -->
+        <ion-row>
+          <ion-col>
+            <button (click)="fazerRegistro3()" class="btn btn-block btn-enviar"> Enviar </button>
+          </ion-col>
+        </ion-row>
+      </div>
+  
