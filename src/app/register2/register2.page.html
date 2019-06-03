@@ -1,0 +1,161 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  
+  <ion-content>
+  
+    <main class="ion-padding">
+      <figure class="text-center">
+        <img src="/assets/imgs/hands.png" alt="Logo ASSOAR" class="logo-assoar">
+        <figcaption class='legenda-logo'>1º Passo - Dados Pessoais</figcaption>
+      </figure>
+  
+      <section class="forms">
+        <div> <!-- cpf -->
+          <ion-row>
+            <ion-col>
+              <label for="c_cpf_pessoa">
+                  <ion-icon name="paper"></ion-icon> CPF
+              </label>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col>
+              <input id="c_cpf_pessoa" type="text" class="form-cpf" [(ngModel)]="userRegister.cpf" placeholder="Seu CPF">
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div> <!-- rg -->
+          <ion-row>
+            <ion-col>
+              <label for="c_RG">
+                  <ion-icon name="list-box"></ion-icon> RG
+              </label>
+            </ion-col>
+          </ion-row>
+            
+          <ion-row>
+            <ion-col>
+              <input id="c_RG" type="text" class="form-RG" [(ngModel)]="userRegister.RG" placeholder="Seu RG">
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div> <!-- celular -->
+          <ion-row>
+            <ion-col>
+              <label for="c_celular">
+                  <ion-icon name="phone-portrait"></ion-icon> Celular
+              </label>
+            </ion-col>
+          </ion-row>
+            
+          <ion-row>
+            <ion-col>
+              <input id="c_celular" type="number" class="form-celular" [(ngModel)]="userRegister.celular" placeholder="Sua Celular para Contato">
+            </ion-col>
+          </ion-row>
+        </div>
+        
+
+
+        <!--Form de Endereço-->
+        <figure class="text-center">
+          <figcaption class='legenda-logo'>2º Passo - Endereço</figcaption>
+        </figure>
+        
+          <section class="form-endereco">
+            <div> <!-- bairro -->
+              <ion-row>
+                <ion-col>
+                  <label for="c_bairro_pessoa">
+                    <ion-icon name="paper"></ion-icon> Bairro
+                  </label>
+                </ion-col>
+              </ion-row>
+        
+                <ion-row>
+                  <ion-col>
+                    <input id="c_bairro_pessoa" type="text" class="form-bairro" [(ngModel)]="userRegister.bairro" placeholder="Seu Bairro">
+                  </ion-col>
+                </ion-row>
+              </div>
+        
+              <div> <!-- rua -->
+                <ion-row>
+                  <ion-col>
+                    <label for="c_rua">
+                        <ion-icon name="list-box"></ion-icon> Rua
+                    </label>
+                  </ion-col>
+                </ion-row>
+                  
+                <ion-row>
+                  <ion-col>
+                    <input id="c_rua" type="text" class="form-rua" [(ngModel)]="userRegister.rua" placeholder="Sua Rua">
+                  </ion-col>
+                </ion-row>
+              </div>
+        
+              <div> <!-- numero -->
+                <ion-row>
+                  <ion-col>
+                    <label for="c_numero">
+                        <ion-icon name="phone-portrait"></ion-icon> Numero
+                    </label>
+                  </ion-col>
+                </ion-row>
+                  
+                <ion-row>
+                  <ion-col>
+                    <input id="c_numero" type="number" class="form-numero" [(ngModel)]="userRegister.numero" placeholder="Número da Residência">
+                  </ion-col>
+                </ion-row>
+              </div>
+
+              <div> <!-- complemento -->
+                <ion-row>
+                  <ion-col>
+                    <label for="c_complemento">
+                        <ion-icon name="phone-portrait"></ion-icon> Complemento
+                    </label>
+                  </ion-col>
+                </ion-row>
+                  
+                <ion-row>
+                  <ion-col>
+                    <input id="c_complemento" type="text" class="form-complemento" [(ngModel)]="userRegister.complemento" placeholder="Complemento">
+                  </ion-col>
+                </ion-row>
+              </div>
+
+              <div> <!--Radio com a opção de ser doador ou paciente-->
+                <ion-list lines="full" [inset]="inset" name="radio-paciente-doador">
+                  <ion-radio-group [(ngModel)]="ionic-radio">
+                    <ion-item>
+                      <ion-label>Doador</ion-label>
+                      <ion-radio name="lines" slot="end" value="Doador"></ion-radio>
+                    </ion-item>
+            
+                    <ion-item>
+                      <ion-label>Paciente</ion-label>
+                      <ion-radio name="inset" slot="end" value="Paciente"></ion-radio>
+                    </ion-item>
+                  </ion-radio-group>
+                </ion-list>
+              </div>
+
+              <div> <!-- botão de próximo -->
+                <ion-row>
+                  <ion-col text-center>
+                    <button (click)="fazerRegistro2()" class="btn btn-block btn-proximo"> PRÓXIMO </button>
+                  </ion-col>
+                </ion-row>
+              </div>
+  
+      </section>
+    </main>
+  </ion-content>      

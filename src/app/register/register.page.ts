@@ -42,8 +42,8 @@ export class RegisterPage implements OnInit {
         } else if (error.message.indexOf('email') !== -1) {
           this.presentToast('Por favor, insira um e-mail válido!');
         }
-
-      } finally {
+      } 
+      finally {
         this.loading.dismiss();
       }
     }

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+figure > img.logo-assoar{
+    margin-top: 50px;
+    width: 120px;
+    height: 120px;
+}
+
+figure > figcaption.legenda-logo{
+    color: #F17F29;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.ion-padding{
+    background-image: url('/assets/imgs/img3.png');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+}
+.forms{
+    margin: 20px;
+    font-size: 15px;
+    color: #F17F29;
+}
+
+input{
+    display: block;
+    border: none;
+    width: 100%;    
+	border-bottom: 1px solid rgb(86, 134, 221);
+	background: transparent;
+    outline: none;
+    margin-bottom: 25px;
+    color: rgb(49, 91, 168);
+}
+
+.forms input:focus{
+    border-bottom: 1px solid #F96900;
+}
+
+.btn-proximo{
+    color: white;
+    background: #F17F29;
+    margin-top: 20px;
+}
+.form-endereco{
+    margin: 5px;
+    font-size: 15px;
+    color: #F17F29;  
+}
