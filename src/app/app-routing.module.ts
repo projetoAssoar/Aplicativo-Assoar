@@ -7,12 +7,13 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [LoggedGuard] },
-  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule'},
   { path: 'home2', loadChildren: './home2/home2.module#Home2PageModule', canActivate: [AuthGuard] },
-  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
-  { path: 'pacient', loadChildren: './pacient/pacient.module#PacientPageModule' },
-  { path: 'doador', loadChildren: './doador/doador.module#DoadorPageModule' },
-  { path: 'register2', loadChildren: './register2/register2.module#Register2PageModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule', canActivate: [AuthGuard] },
+  { path: 'register2', loadChildren: './register2/register2.module#Register2PageModule', canActivate: [AuthGuard] },
+  { path: 'register3', loadChildren: './register3/register3.module#Register3PageModule', canActivate: [AuthGuard] },
+
+
 
 ];
 

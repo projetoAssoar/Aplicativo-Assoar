@@ -5,157 +5,204 @@
   
   <ion-content>
   
-    <main class="ion-padding">
+    <main class="ion-padding" *ngIf="form_doador1">
       <figure class="text-center">
         <img src="/assets/imgs/hands.png" alt="Logo ASSOAR" class="logo-assoar">
-        <figcaption class='legenda-logo'>1º Passo - Dados Pessoais</figcaption>
+        <figcaption class='legenda-logo'>Informações Pessoais</figcaption>
       </figure>
   
       <section class="forms">
+          <div> <!-- nome -->
+            <ion-row>
+              <ion-col>
+                <label for="c_nome_pessoa">
+                  <ion-icon name="person"></ion-icon> Nome
+                </label>
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col>
+                <input id="c_nome_pessoa" type="text" class="form-nome" [(ngModel)]="doador.nome" placeholder="Seu Nome">
+              </ion-col>
+            </ion-row>
+          </div>
+
+        <div> <!-- RG -->
+          <ion-row>
+            <ion-col>
+              <label for="c_rg_pessoa">
+                <ion-icon name="person"></ion-icon> RG
+              </label>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col>
+              <input id="c_rg_pessoa" type="text" class="form-rg" [(ngModel)]="doador.rg" placeholder="Seu RG">
+            </ion-col>
+          </ion-row>
+        </div>
+  
         <div> <!-- cpf -->
           <ion-row>
             <ion-col>
-              <label for="c_cpf_pessoa">
-                  <ion-icon name="paper"></ion-icon> CPF
-              </label>
-            </ion-col>
-          </ion-row>
-  
-          <ion-row>
-            <ion-col>
-              <input id="c_cpf_pessoa" type="text" class="form-cpf" [(ngModel)]="userRegister.cpf" placeholder="Seu CPF">
-            </ion-col>
-          </ion-row>
-        </div>
-  
-        <div> <!-- rg -->
-          <ion-row>
-            <ion-col>
-              <label for="c_RG">
-                  <ion-icon name="list-box"></ion-icon> RG
+              <label for="c_cpf">
+                <ion-icon name="mail"></ion-icon> CPF
               </label>
             </ion-col>
           </ion-row>
             
           <ion-row>
             <ion-col>
-              <input id="c_RG" type="text" class="form-RG" [(ngModel)]="userRegister.RG" placeholder="Seu RG">
+              <input id="c_cpf" type="email" class="form-cpf" [(ngModel)]="doador.cpf" placeholder="Seu CPF">
             </ion-col>
           </ion-row>
         </div>
   
-        <div> <!-- celular -->
+        <div> <!-- senha -->
           <ion-row>
             <ion-col>
               <label for="c_celular">
-                  <ion-icon name="phone-portrait"></ion-icon> Celular
+                <ion-icon name="lock"></ion-icon> Celular
               </label>
             </ion-col>
           </ion-row>
             
           <ion-row>
             <ion-col>
-              <input id="c_celular" type="number" class="form-celular" [(ngModel)]="userRegister.celular" placeholder="Sua Celular para Contato">
+              <input id="c_celular" type="text" class="form-celular" [(ngModel)]="doador.celular" placeholder="Seu Celular">
             </ion-col>
           </ion-row>
         </div>
-        
 
+        <h2>Endereço</h2>
 
-        <!--Form de Endereço-->
-        <figure class="text-center">
-          <figcaption class='legenda-logo'>2º Passo - Endereço</figcaption>
-        </figure>
-        
-          <section class="form-endereco">
-            <div> <!-- bairro -->
-              <ion-row>
-                <ion-col>
-                  <label for="c_bairro_pessoa">
-                    <ion-icon name="paper"></ion-icon> Bairro
-                  </label>
-                </ion-col>
-              </ion-row>
-        
-                <ion-row>
-                  <ion-col>
-                    <input id="c_bairro_pessoa" type="text" class="form-bairro" [(ngModel)]="userRegister.bairro" placeholder="Seu Bairro">
-                  </ion-col>
-                </ion-row>
-              </div>
-        
-              <div> <!-- rua -->
-                <ion-row>
-                  <ion-col>
-                    <label for="c_rua">
-                        <ion-icon name="list-box"></ion-icon> Rua
-                    </label>
-                  </ion-col>
-                </ion-row>
-                  
-                <ion-row>
-                  <ion-col>
-                    <input id="c_rua" type="text" class="form-rua" [(ngModel)]="userRegister.rua" placeholder="Sua Rua">
-                  </ion-col>
-                </ion-row>
-              </div>
-        
-              <div> <!-- numero -->
-                <ion-row>
-                  <ion-col>
-                    <label for="c_numero">
-                        <ion-icon name="phone-portrait"></ion-icon> Numero
-                    </label>
-                  </ion-col>
-                </ion-row>
-                  
-                <ion-row>
-                  <ion-col>
-                    <input id="c_numero" type="number" class="form-numero" [(ngModel)]="userRegister.numero" placeholder="Número da Residência">
-                  </ion-col>
-                </ion-row>
-              </div>
-
-              <div> <!-- complemento -->
-                <ion-row>
-                  <ion-col>
-                    <label for="c_complemento">
-                        <ion-icon name="phone-portrait"></ion-icon> Complemento
-                    </label>
-                  </ion-col>
-                </ion-row>
-                  
-                <ion-row>
-                  <ion-col>
-                    <input id="c_complemento" type="text" class="form-complemento" [(ngModel)]="userRegister.complemento" placeholder="Complemento">
-                  </ion-col>
-                </ion-row>
-              </div>
-
-              <div> <!--Radio com a opção de ser doador ou paciente-->
-                <ion-list lines="full" [inset]="inset" name="radio-paciente-doador">
-                  <ion-radio-group [(ngModel)]="ionic-radio">
-                    <ion-item>
-                      <ion-label>Doador</ion-label>
-                      <ion-radio name="lines" slot="end" value="Doador"></ion-radio>
-                    </ion-item>
+        <div> <!-- bairro -->
+          <ion-row>
+            <ion-col>
+              <label for="c_bairro">
+                <ion-icon name="lock"></ion-icon> Bairro
+              </label>
+            </ion-col>
+          </ion-row>
             
-                    <ion-item>
-                      <ion-label>Paciente</ion-label>
-                      <ion-radio name="inset" slot="end" value="Paciente"></ion-radio>
-                    </ion-item>
-                  </ion-radio-group>
-                </ion-list>
-              </div>
+          <ion-row>
+            <ion-col>
+              <input id="c_bairro" type="text" class="form-bairro" [(ngModel)]="doador.bairro" placeholder="Seu Bairro">
+            </ion-col>
+          </ion-row>
+        </div>
 
-              <div> <!-- botão de próximo -->
-                <ion-row>
-                  <ion-col text-center>
-                    <button (click)="fazerRegistro2()" class="btn btn-block btn-proximo"> PRÓXIMO </button>
-                  </ion-col>
-                </ion-row>
-              </div>
+        <div> <!-- rua -->
+          <ion-row>
+            <ion-col>
+              <label for="c_rua">
+                <ion-icon name="lock"></ion-icon> Rua
+              </label>
+            </ion-col>
+          </ion-row>
+            
+          <ion-row>
+            <ion-col>
+              <input id="c_rua" type="text" class="form-rua" [(ngModel)]="doador.rua" placeholder="Sua Rua">
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div> <!-- Numero -->
+          <ion-row>
+            <ion-col>
+              <label for="c_numero">
+                <ion-icon name="lock"></ion-icon> Numero
+              </label>
+            </ion-col>
+          </ion-row>
+            
+          <ion-row>
+            <ion-col>
+              <input id="c_numero" type="text" class="form-numero" [(ngModel)]="doador.numero" placeholder="Número da Residência">
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div> <!-- complemento -->
+          <ion-row>
+            <ion-col>
+              <label for="c_complemento">
+                <ion-icon name="lock"></ion-icon> Complemento
+              </label>
+            </ion-col>
+          </ion-row>
+            
+          <ion-row>
+            <ion-col>
+              <input id="c_complemento" type="text" class="form-complemento" [(ngModel)]="doador.complemento" placeholder="Complemento, se houver">
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div> <!-- botão de próximo e texto para fazer login -->
+          <ion-row>
+            <ion-col text-center>
+              <button (click)="exibir_formDoador2()" class="btn btn-block btn-proximo"> Próximo Passo </button>
+            </ion-col>
+          </ion-row>
+        </div>
   
       </section>
     </main>
-  </ion-content>      
+
+    <main class="ion-padding-doador" *ngIf="form_doador2">
+        <figure class="text-center">
+          <img src="/assets/imgs/wheelchair.png" alt="Logo ASSOAR" class="logo-assoar">
+          <figcaption class='legenda-logo2'>Doador</figcaption>
+        </figure>
+        
+        <!--Lista com os equipamentos-->
+        <ion-row>
+            <ion-col>
+              <ion-list>
+                <ion-list-header>O que deseja doar?</ion-list-header>
+                  <ion-item>
+                      <ion-label color="primary">Equipamentos</ion-label>
+                      <ion-select multiple="true" cancelText="Cancelar" okText="Okay!" [(ngModel)]="doador.equipamentos">
+                        <ion-select-option value="cadeira-rodas">Cadeira de Rodas</ion-select-option>
+                        <ion-select-option value="cama-banho">Cama de Banho</ion-select-option>
+                        <ion-select-option value="muletas">Muletas</ion-select-option>
+                        <ion-select-option value="remedio">Remédio</ion-select-option>
+                      </ion-select>
+                   </ion-item>       
+              </ion-list>
+          </ion-col>
+        </ion-row>
+    
+        <!--Outros Equipamentos fora da Lista-->
+        <div class="input-outros">
+          <ion-row>
+            <ion-col>
+                <label for="c_outros_doador">
+                    <ion-icon name="add-circle"></ion-icon> Outros
+                </label>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+              <ion-col>
+                <input id="c_outros_doador" type="text" class="input-outros" [(ngModel)]="doador.outros" placeholder="Outros">
+              </ion-col>
+          </ion-row>
+        </div>
+    
+        <!--Botão-->
+        <div> <!-- botão final -->
+          <ion-row>
+            <ion-col>
+              <button (click)="cadastrar()" class="btn btn-block btn-enviar"> Cadastrar </button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </main>
+
+  
+  </ion-content>

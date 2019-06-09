@@ -1,0 +1,225 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<ion-content>
+
+  <main class="ion-padding" *ngIf="form_paciente1">
+    <figure class="text-center">
+      <img src="/assets/imgs/hands.png" alt="Logo ASSOAR" class="logo-assoar">
+      <figcaption class='legenda-logo'>Informações Pessoais</figcaption>
+    </figure>
+
+    <section class="forms">
+      <div> <!-- nome -->
+        <ion-row>
+          <ion-col>
+            <label for="c_nome_pessoa">
+              <ion-icon name="person"></ion-icon> Nome
+            </label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <input id="c_nome_pessoa" type="text" class="form-nome" [(ngModel)]="paciente.nome" placeholder="Seu nome">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div> <!-- RG -->
+        <ion-row>
+          <ion-col>
+            <label for="c_rg_pessoa">
+              <ion-icon name="person"></ion-icon> RG
+            </label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <input id="c_rg_pessoa" type="text" class="form-rg" [(ngModel)]="paciente.rg" placeholder="Seu RG">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div> <!-- cpf -->
+        <ion-row>
+          <ion-col>
+            <label for="c_cpf">
+              <ion-icon name="mail"></ion-icon> CPF
+            </label>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <input id="c_cpf" type="email" class="form-cpf" [(ngModel)]="paciente.cpf" placeholder="Seu CPF">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div> <!-- senha -->
+        <ion-row>
+          <ion-col>
+            <label for="c_celular">
+              <ion-icon name="lock"></ion-icon> Celular
+            </label>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <input id="c_celular" type="text" class="form-celular" [(ngModel)]="paciente.celular" placeholder="Seu Celular">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <h2>Endereço</h2>
+
+      <div> <!-- bairro -->
+        <ion-row>
+          <ion-col>
+            <label for="c_bairro">
+              <ion-icon name="lock"></ion-icon> Bairro
+            </label>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <input id="c_bairro" type="text" class="form-bairro" [(ngModel)]="paciente.bairro" placeholder="Seu Bairro">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div> <!-- rua -->
+        <ion-row>
+          <ion-col>
+            <label for="c_rua">
+              <ion-icon name="lock"></ion-icon> rua
+            </label>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <input id="c_rua" type="text" class="form-rua" [(ngModel)]="paciente.rua" placeholder="Sua Rua">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div> <!-- Numero -->
+        <ion-row>
+          <ion-col>
+            <label for="c_numero">
+              <ion-icon name="lock"></ion-icon> Numero
+            </label>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <input id="c_numero" type="text" class="form-numero" [(ngModel)]="paciente.numero" placeholder="Número da Residência">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div> <!-- complemento -->
+        <ion-row>
+          <ion-col>
+            <label for="c_complemento">
+              <ion-icon name="lock"></ion-icon> Complemento
+            </label>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row>
+          <ion-col>
+            <input id="c_complemento" type="text" class="form-complemento" [(ngModel)]="paciente.complemento" placeholder="Complemento, se houver">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div> <!-- botão de próximo e texto para fazer login -->
+        <ion-row>
+          <ion-col text-center>
+            <button (click)="exibir_formPaciente2()" class="btn btn-block btn-proximo"> Próximo Passo </button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </section>
+  </main>
+
+  <main class="ion-padding-paciente" *ngIf="form_paciente2">
+      <figure class="text-center">
+        <img src="/assets/imgs/pacient.png" alt="Logo ASSOAR" class="logo-assoar">
+        <figcaption class='legenda-paciente'>Paciente</figcaption>
+      </figure>
+
+      <!--Lista com os equipamentos-->
+      <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-list-header>Escolha o Equipamento</ion-list-header>
+                <ion-item>
+                    <ion-label color="danger">Equipamentos</ion-label>
+                    <ion-select multiple="true" cancelText="Cancelar" okText="Okay!" [(ngModel)]="paciente.equipamentos">
+                      <ion-select-option value="cadeira-rodas">Cadeira de Rodas</ion-select-option>
+                      <ion-select-option value="cama-banho">Cama de Banho</ion-select-option>
+                      <ion-select-option value="muletas">Muletas</ion-select-option>
+                      <ion-select-option value="remedio">Remédio</ion-select-option>
+                    </ion-select>
+                 </ion-item>       
+            </ion-list>
+        </ion-col>
+      </ion-row>
+
+
+      <!--Responsavel se Tiver-->
+      <div class="input-responsavel">
+          <ion-row>
+            <ion-col>
+                <label for="c_responsavel_paciente">
+                    <ion-icon name="add-circle"></ion-icon> Responsável
+                </label>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+              <ion-col>
+                <input id="c_responsavel_paciente" type="text" class="form-responsavel" [(ngModel)]="paciente.responsavel" placeholder="Responsável (Se Tiver)">
+              </ion-col>
+          </ion-row>
+        </div>
+
+        <!--Tempo de Empréstimo-->
+      <div class="input-devolucao">
+          <ion-row>
+            <ion-col>
+                <label for="c_data_paciente">
+                    <ion-icon name="add-circle"></ion-icon> Data de Devolução do Equipamento
+                </label>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+              <ion-col>
+                <input id="c_data_paciente" type="data" class="form-data" [(ngModel)]="paciente.data" placeholder="Data de Devolução">
+              </ion-col>
+          </ion-row>
+        </div>
+  
+      <!--Botão-->
+      <div> <!-- botão final -->
+        <ion-row>
+          <ion-col>
+            <button (click)="cadastrar2()" class="btn btn-block btn-enviar"> Enviar </button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </main>
+
+</ion-content>
