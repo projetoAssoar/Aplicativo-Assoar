@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DoadorPageModule } from '../doador/doador.module';
-import { PacientPageModule } from '../pacient/pacient.module';
 
 
 @Component({
@@ -15,11 +13,11 @@ export class AboutPage implements OnInit {
   }
 
   btn_Doador() {
-    this.router.navigate(['doador']);
+    this.router.navigate(['register2']);
   }
 
   btn_Paciente() {
-    this.router.navigate(['pacient']);
+    this.router.navigate(['register3']);
   }
 
 }
