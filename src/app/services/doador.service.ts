@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { Doador } from '../interfaces/doador';
 import { map } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class DoadorService {
   private doadorInfoColletion: AngularFirestoreCollection<Doador>;
 
-  constructor(private afs: AngularFirestore) { 
+  constructor(private afs: AngularFirestore, private afa: AngularFireAuth) { 
     this.doadorInfoColletion = this.afs.collection<Doador>('Doadores');
   }
 
@@ -30,5 +31,10 @@ export class DoadorService {
   addDoadores(doador: Doador){
     return this.doadorInfoColletion.add(doador);
   }
+
+  getDoador(userId: string) {
+    return this.doadorInfoColletion.doc<Doador>(userId).valueChanges();
+  }
+
 
 }
