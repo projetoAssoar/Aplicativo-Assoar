@@ -1,22 +1,9 @@
-button.cards-button{
-  width: 100%;
-  height: 100px;
+ion-slides{
+  margin-top: 30px;
 }
-
-button.cards-button > ion-icon{
-  margin-top: 20px;
-  font-size: 25px;
+ion-slide{
+  margin-bottom: 20px;
 }
-
-button.cards-button > i{
-  margin-top: 18px;
-  font-size: 25px;
-  display: block;
-  margin: 20px 0px 10px 0px;
-}
-
-p.nome-associacao{
-  font-size: 30px;
-  margin: 0px;
-  color: rgb(255, 123, 0);
+.item-celular{
+  margin-bottom: 20px;
 }
