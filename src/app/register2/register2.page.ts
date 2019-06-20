@@ -14,11 +14,10 @@ import { LoadingController, ToastController } from '@ionic/angular';
   styleUrls: ['./register2.page.scss'],
 })
 export class Register2Page implements OnInit {
-  private doadores = new Array<Doador>();
-  private doadoresSubscription: Subscription; 
-  private doador: Doador = {}
   private doadorId: string = null;
+  public doador: Doador = {};
   private loading: any;
+  private doadorSubscription: Subscription;
 
   form_doador1 = true;
   form_doador2 = false;
@@ -26,25 +25,31 @@ export class Register2Page implements OnInit {
   constructor(public router: Router,
   private doadorService: DoadorService,
   private authService: AuthService,
-  private activateRoute: ActivatedRoute,
+  private activatedRoute: ActivatedRoute,
   private toastCtrl: ToastController,
   private loadingCtrl: LoadingController) { 
-    this.doadoresSubscription = this.doadorService.getDoadores().subscribe(data => {
-      this.doadores = data;
-    });
+
+    this.doadorId = this.activatedRoute.snapshot.params['id'];
+    if(this.doadorId) this.loadDoador();
   }
   
   ngOnInit() { }  
   
-  ngOnDestroy(){
-    this.doadoresSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (this.doadorSubscription) this.doadorSubscription.unsubscribe();
+  }
+
+  loadDoador(){
+    this.doadorSubscription = this.doadorService.getDoador(this.doadorId).subscribe(data => {
+      this.doador = data;
+    });
   }
 
   async cadastrar(){
     await this.presentLoading();
 
     this.doador.userId = this.authService.getAuth().currentUser.uid;
-
+    
     if (this.doadorId){
 
     } else {
@@ -53,6 +58,7 @@ export class Register2Page implements OnInit {
     try{
       await this.doadorService.addDoadores(this.doador);
       await this.loading.dismiss();
+      this.router.navigate(['home2']);
     } catch(error) {
       this.presentToast("Erro ao tentar salvar!");
       this.loading.dismiss();
