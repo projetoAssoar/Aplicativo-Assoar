@@ -13,7 +13,7 @@ export class PacienteService {
     this.pacienteInfoColletion = this.afs.collection<Paciente>('Pacientes');
    }
 
-   getPaciente(){
+   getPacientes(){
     return this.pacienteInfoColletion.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
@@ -28,5 +28,9 @@ export class PacienteService {
 
   addPaciente(paciente: Paciente){
     return this.pacienteInfoColletion.add(paciente);
+  }
+
+  getPaciente(userId: string) {
+    return this.pacienteInfoColletion.doc<Paciente>(userId).valueChanges();
   }
 }
