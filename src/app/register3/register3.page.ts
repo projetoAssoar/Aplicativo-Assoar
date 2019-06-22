@@ -16,7 +16,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 export class Register3Page implements OnInit {
   private pacientes = new Array<Paciente>();
   private pacientesSubscription: Subscription; 
-  private paciente: Paciente = {}
+  private paciente: Paciente = {};
   private pacienteId: string = null;
   private loading: any;
 
@@ -29,7 +29,7 @@ export class Register3Page implements OnInit {
     private activateRoute: ActivatedRoute,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController) { 
-      this.pacientesSubscription = this.pacienteService.getPaciente().subscribe(data => {
+      this.pacientesSubscription = this.pacienteService.getPaciente(this.authService.getAuth().currentUser.uid).subscribe(data => {
         this.pacientes = data;
       });
     }
