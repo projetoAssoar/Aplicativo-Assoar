@@ -1,0 +1,136 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<ion-content>
+    <main class='ion-padding' *ngIf="assoar_home">
+  
+    <div class="buttons">
+      <ion-row>
+        <ion-col text-center>
+          <button class='btn btn-block btn-doadores' style='margin-top: 90px;' (click)="ver_doadores()">
+            Ver Doadores!
+          </button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col text-center>
+          <button class='btn btn-block btn-pacientes' (click)="ver_pacientes()" style="margin-top: 10px;">
+            Ver Pacientes!
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col text-center>
+            <button class='btn btn-block btn-pacientes' (click)="sair()" style="margin-top: 10px;">
+              Sair!
+            </button>
+          </ion-col>
+      </ion-row>
+    </div>  
+  
+    </main>
+
+    <main class='ion-padding-doador' *ngIf="doadores_home">
+  
+        <ion-row>
+            <ion-col>
+            <ion-list>
+              <ion-item-sliding *ngFor="let doador of doadores">
+                  <ion-item>  
+                    <ion-label>
+                      <h4> Dados Pessoais: {{ doador.nome }} </h4>
+                      <p>Nome: {{ doador.nome }}</p>
+                      <p>Rg: {{ doador.rg }}</p>
+                      <p>Cpf: {{ doador.cpf }}</p>
+                      <p>Celular: {{ doador.celular }}</p><br>
+    
+                    <h4>Dados de Endereço</h4>
+                    <p>Bairro: {{ doador.bairro }}</p>
+                    <p>Rua: {{ doador.rua }}</p>
+                    <p>Número: {{ doador.numero }}</p>
+                    <p>Complemento: {{ doador.complemento }}</p><br>
+    
+                    <h4>Dados do Equipamento Doado</h4>
+                    <p>Equipamentos: {{ doador.equipamentos }}</p>
+                    </ion-label>
+                  </ion-item>
+              </ion-item-sliding>
+            </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-footer no-border>
+              <ion-grid fixed>
+                  <ion-row>
+                      <ion-col size="10" offset="1"> 
+                          <ion-button color="primary" expand="full" shape="round" (click)="voltar1()">
+                              Voltar
+                          </ion-button>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-footer>
+      
+    </main>
+
+    <main class='ion-padding-paciente' *ngIf="paciente_home">
+      
+      <ion-row>
+        <ion-col>
+        <ion-list>
+          <ion-item-sliding *ngFor="let paciente of pacientes">
+              <ion-item>  
+                <ion-label>
+                  <h4> Dados Pessoais: {{ paciente.nome }} </h4>
+                  <p>Nome: {{ paciente.nome }}</p>
+                  <p>Rg: {{ paciente.rg }}</p>
+                  <p>Cpf: {{ paciente.cpf }}</p>
+                  <p>Celular: {{ paciente.celular }}</p><br>
+
+                <h4>Dados de Endereço</h4>
+                <p>Bairro: {{ paciente.bairro }}</p>
+                <p>Rua: {{ paciente.rua }}</p>
+                <p>Número: {{ paciente.numero }}</p>
+                <p>Complemento: {{ paciente.complemento }}</p><br>
+
+                <h4>Dados de Doação Referida</h4>
+                <p>Equipamentos: {{ paciente.equipamentos }}</p>
+                <p>Responsável: {{ paciente.responsavel }}</p>
+                <p>Data de Devolução: {{ paciente.data }}</p>
+
+                <ion-footer no-border>
+                    <ion-grid fixed>
+                        <ion-row>
+                            <ion-col size="10" offset="1"> 
+                                <ion-button color="primary" expand="full" shape="round" (click)="autorizar_doacao()">
+                                    {{ text }}
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-footer>
+
+                </ion-label>
+              </ion-item>
+          </ion-item-sliding>
+        </ion-list>
+        </ion-col>
+      </ion-row>
+        
+      <ion-footer no-border>
+          <ion-grid fixed>
+              <ion-row>
+                  <ion-col size="10" offset="1"> 
+                      <ion-button color="primary" expand="full" shape="round" (click)="voltar()">
+                          Voltar
+                      </ion-button>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-footer>
+
+      </main>
+  </ion-content>

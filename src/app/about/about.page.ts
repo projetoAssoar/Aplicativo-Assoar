@@ -8,15 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./about.page.scss'],
 })
 export class AboutPage implements OnInit {
+
   constructor(public router: Router) { }
   ngOnInit() {
   }
 
-  btn_Doador() {
+  ver_doador() {
     this.router.navigate(['register2']);
   }
 
-  btn_Paciente() {
+  ver_paciente() {
     this.router.navigate(['register3']);
   }
 

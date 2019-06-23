@@ -14,11 +14,10 @@ import { LoadingController, ToastController } from '@ionic/angular';
   styleUrls: ['./register3.page.scss'],
 })
 export class Register3Page implements OnInit {
-  private pacientes = new Array<Paciente>();
-  private pacientesSubscription: Subscription; 
-  private paciente: Paciente = {}
   private pacienteId: string = null;
+  public paciente: Paciente = {};
   private loading: any;
+  private pacienteSubscription: Subscription; 
 
   form_paciente1 = true;
   form_paciente2 = false;
@@ -26,35 +25,42 @@ export class Register3Page implements OnInit {
   constructor(public router: Router,
     private pacienteService: PacienteService,
     private authService: AuthService,
-    private activateRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private toastCtrl: ToastController,
-    private loadingCtrl: LoadingController) { 
-      this.pacientesSubscription = this.pacienteService.getPaciente().subscribe(data => {
-        this.pacientes = data;
-      });
+    private loadingCtrl: LoadingController) 
+    { 
+      this.pacienteId = this.activatedRoute.snapshot.params['id'];
+      if(this.pacienteId) this.loadDoador();
     }
 
   ngOnInit() {
   }
 
-  ngOnDestroy(){
-    this.pacientesSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (this.pacienteSubscription) this.pacienteSubscription.unsubscribe();
   }
+
+  loadDoador(){
+    this.pacienteSubscription = this.pacienteService.getPaciente(this.pacienteId).subscribe(data => {
+      this.paciente = data;
+    });
+  }
+  
 
   async cadastrar2(){
     await this.presentLoading();
 
     this.paciente.userId = this.authService.getAuth().currentUser.uid;
-
+    
     if (this.pacienteId){
 
     } else {
       this.paciente.rg = new Date().getTime();
     }
     try{
-      await this.pacienteService.addPaciente(this.paciente);
+      await this.pacienteService.addPacientes(this.paciente);
       await this.loading.dismiss();
-      this.router.navigate(['home2']);
+      this.router.navigate(['home-paciente']);
     } catch(error) {
       this.presentToast("Erro ao tentar salvar!");
       this.loading.dismiss();

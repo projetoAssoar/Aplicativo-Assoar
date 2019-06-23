@@ -26,6 +26,7 @@ export class DoadorService {
         });
       })
     )
+
   }
 
   addDoadores(doador: Doador){

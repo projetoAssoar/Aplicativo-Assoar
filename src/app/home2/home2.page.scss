@@ -1,9 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
 ion-slides{
-  margin-top: 30px;
+  margin-top: 20px;
 }
-ion-slide{
-  margin-bottom: 20px;
+button{
+  margin-bottom: 30px;
+  background: #0351E3;
+  color: white;
 }
-.item-celular{
-  margin-bottom: 20px;
+button:hover{
+  background: #E86806;
+}
+ion-label{
+  color: #3F4041;
+  width: 50p
+}
+ion-label:hover{
+  color: #E86806;
+}
+h5{
+  color: #0351E3;
+}
+ion-card-subtitle{
+  color: #0351E3;
+}
+ion-icon{
+  width: 15px;
+  color: #E86806;
+  margin-bottom: 15px;
+  margin-right: 15px;
 }

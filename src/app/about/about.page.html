@@ -1,6 +1,64 @@
 <ion-content>
     <main class='ion-padding'>
-        <button (click)="btn_Doador()"> Só para testar --> Cadastro Doador</button>
-        <button (click)="btn_Paciente()"> Só para testar --> Cadastro Paciente</button>
+        <ion-slides pager=true>
+            <ion-slide>
+                <div class="slide-img-padding">
+                    <img src="assets/imgs/slide-img-1.png">
+                </div>
+                <div>
+                    <h5>Seja Bem Vindo!</h5>
+                    <h3 class="slide-1">A Assoar é uma organização sem fins lucrativos, que compromete-se a amparar pessoas com deficiências físicas que 
+                        não possuem condições financeiras de adquirir equipamentos hospitalares.
+                    </h3>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="slide-img-padding">
+                  <img src="assets/imgs/slide-img-2.png">
+                </div>
+
+                <div>
+                  <h3 class="slide-2">Deseja contribuir para a Assoar com uma doação?</h3>
+                </div>
+
+                <ion-footer no-border>
+                    <ion-grid fixed>
+                        <ion-row>
+                            <ion-col size="10" offset="1"> 
+                                <ion-button color="danger" expand="full" shape="round" (click)="ver_doador()">
+                                    Faça seu Cadastro como Doador!
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-footer>
+
+            </ion-slide>
+
+            <ion-slide>
+                <div class="slide-img-padding">
+                    <img src="assets/imgs/slide-img-3.png">
+                </div>
+    
+                <div>
+                    <h3 class="slide-3">Deseja solicitar um de nossos equipamentos?</h3>
+                </div>
+    
+                <ion-footer no-border>
+                    <ion-grid fixed>
+                        <ion-row>
+                            <ion-col size="10" offset="1"> 
+                                <ion-button color="primary" expand="full" shape="round" (click)="ver_paciente()">
+                                    Faça seu Cadastro como Paciente!
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-footer>
+    
+            </ion-slide>
+
+        </ion-slides>
     </main>
 </ion-content>

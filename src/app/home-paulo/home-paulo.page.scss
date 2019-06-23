@@ -1,0 +1,47 @@
+.ion-padding{
+    background-image: url('/assets/imgs/bg-1.png');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.buttons{
+    margin-top: 90%;
+}
+button{
+	font-size: 18px;
+    border-radius: 5px;
+}
+button.btn-doadores{
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+}
+button.btn-doadores:hover{
+    background: #DF7401;
+    border: 1px solid #DF7401;
+}
+button.btn-pacientes{
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+}
+button.btn-pacientes:hover{
+    background: #0404B4;
+    border: 1px solid #0404B4;
+}
+button.btn-autorizar{
+    color: #fff;
+    background: #0000FF;
+}
+ion-list{
+    margin-top: 50px;
+}
+h4{
+    color: #E86806;
+    size: 30px;
+}
+ion-icon{
+    width: 30px;
+}
+

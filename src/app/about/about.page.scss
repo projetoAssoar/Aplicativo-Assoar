@@ -3,6 +3,37 @@
     padding: 0%;
     margin: 0%;
 }
-.ion-padding{
-    margin-top: 50px;
+ion-slide{
+    display: block;
+    margin-top: 10px;
+}
+.slide-img-padding{
+    padding: 40px;
+    width: 100%;
+}
+h5{
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    color: #FF8000; 
+}
+.slide-1{
+    font-size: 15px;
+    font-weight: lighter;
+    margin-bottom: 70px;
+    color: #0431B4;
+}
+.slide-2{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    color: #0431B4;
+    padding: 10px;
+}
+.slide-3{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    color: #F58126;
+    padding: 10px;
 }

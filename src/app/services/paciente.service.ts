@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { Paciente } from '../interfaces/paciente';
 import { map } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class PacienteService {
   private pacienteInfoColletion: AngularFirestoreCollection<Paciente>;
   
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, private afa: AngularFireAuth) {
     this.pacienteInfoColletion = this.afs.collection<Paciente>('Pacientes');
    }
 
@@ -26,7 +27,7 @@ export class PacienteService {
     )
   }
 
-  addPaciente(paciente: Paciente){
+  addPacientes(paciente: Paciente){
     return this.pacienteInfoColletion.add(paciente);
   }
 
