@@ -15,18 +15,19 @@ export class Home2Page implements OnInit {
 
   private loading: any;
   public doadores = new Array<Doador>();
+  public currentUID: string;
   private doadoresSubscription: Subscription;
-  
+
   constructor(
     public router: Router,
     private authService: AuthService,
     private loadingCtrl: LoadingController,
     private doadorService: DoadorService,
-    private toastCtrl: ToastController) 
-    {
+    private toastCtrl: ToastController) {
       this.doadoresSubscription = this.doadorService.getDoadores().subscribe(data => {
         this.doadores = data;
       });
+      this.currentUID = this.authService.getAuth().currentUser.uid;
     }
 
   ngOnInit() {
