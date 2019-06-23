@@ -16,6 +16,7 @@ export class HomePacientePage implements OnInit {
   private loading: any;
   public pacientes = new Array<Paciente>();
   private pacientesSubscription: Subscription;
+  public currentUID: string;
 
   constructor(public router: Router,
     private authService: AuthService,
@@ -26,6 +27,8 @@ export class HomePacientePage implements OnInit {
       this.pacientesSubscription = this.pacienteService.getPacientes().subscribe(data => {
         this.pacientes = data;
       });
+      this.currentUID = this.authService.getAuth().currentUser.uid;
+      console.log(this.currentUID);
     }
 
   ngOnInit() {
