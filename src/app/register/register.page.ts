@@ -40,7 +40,11 @@ export class RegisterPage implements OnInit {
         } else if (error.message.indexOf('password') !== -1) {
           this.presentToast('Por favor, insira sua senha!');
         } else if (error.message.indexOf('email') !== -1) {
-          this.presentToast('Por favor, insira um e-mail válido!');
+          if (error.message.indexOf('another account') !== -1) {
+            this.presentToast('Esse e-mail já está em uso por outro usuário!');
+          } else {
+            this.presentToast('Por favor, insira um e-mail válido!');
+          }
         }
       } 
       finally {

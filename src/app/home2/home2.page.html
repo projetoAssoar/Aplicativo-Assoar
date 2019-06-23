@@ -9,35 +9,9 @@
 
     <!--Informações Pessoais-->
     <ion-slide>
-<<<<<<< HEAD
-      <ion-card>
-      <img src="assets/imgs/bg-slide-doador.png"/>
-        <ion-card-header>
-        <ion-card-subtitle>Perfil</ion-card-subtitle>
-          <ion-card-title><h5 class="featured-title" *ngFor="let doador of doadores">Seja Bem Vindo {{ doador.nome }}!</h5></ion-card-title>
-        </ion-card-header>
-
-        <ion-list>
-          <ion-item *ngFor="let doador of doadores">
-            <ion-icon name="person"></ion-icon><ion-label class="item-nome">Nome: {{ doador.nome }}</ion-label>
-          </ion-item>
-
-          <ion-item *ngFor="let doador of doadores">
-            <ion-icon name="list-box"></ion-icon><ion-label class="item-rg">Rg: {{ doador.rg }}</ion-label>
-          </ion-item>
-
-          <ion-item *ngFor="let doador of doadores">
-            <ion-icon name="list-box"></ion-icon><ion-label class="item-cpf">Cpf: {{ doador.cpf }}</ion-label>
-          </ion-item>
-
-          <ion-item *ngFor="let doador of doadores">
-            <ion-icon name="tablet-portrait"></ion-icon><ion-label class="item-celular">Celular: {{ doador.celular }}</ion-label>
-          </ion-item>
-=======
       <ion-card style="width: 100%;">
         <ion-card-header>
-        <ion-card-subtitle>Perfil</ion-card-subtitle>
-        <img src="assets/imgs/bg-slide-doador.png"/>
+          <img src="assets/imgs/bg-slide-doador.png"/>
           <ion-card-title><h5 class="featured-title">Boas-vindas!</h5></ion-card-title>
         </ion-card-header>
 
@@ -59,7 +33,6 @@
               <ion-label class="item-celular">Celular: {{ doador.celular }}</ion-label>
             </ion-item>
           </div>
->>>>>>> 44e95a056a3c41edfd91f5ce33931412b1b89a88
         </ion-list>
                
         <ion-footer>
@@ -77,35 +50,12 @@
 
     <!--Informações de Endereço-->
     <ion-slide>
-<<<<<<< HEAD
-      <ion-card>
-        <img src="assets/imgs/bg-slide-address.png"/>
-=======
       <ion-card style="width: 100%;">
->>>>>>> 44e95a056a3c41edfd91f5ce33931412b1b89a88
+        <img src="assets/imgs/bg-slide-address.png"/>
         <ion-card-header>
-          <ion-card-subtitle>Perfil</ion-card-subtitle>
-          <ion-card-title><h5 class="featured-title" *ngFor="let doador of doadores">Informações de Endereço</h5></ion-card-title>
+          <ion-card-title><h5 class="featured-title">Informações de Endereço</h5></ion-card-title>
         </ion-card-header>
       
-<<<<<<< HEAD
-          <ion-list>
-            <ion-item *ngFor="let doador of doadores">
-              <ion-icon name="arrow-forward"></ion-icon><ion-label class="item-nome">Bairro: {{ doador.bairro }}</ion-label>
-            </ion-item>
-        
-            <ion-item *ngFor="let doador of doadores">
-              <ion-icon name="arrow-forward"></ion-icon><ion-label class="item-nome">Rua: {{ doador.rua }}</ion-label>
-            </ion-item>
-        
-            <ion-item *ngFor="let doador of doadores">
-              <ion-icon name="arrow-forward"></ion-icon><ion-label class="item-nome">Numero: {{ doador.numero }}</ion-label>
-            </ion-item>
-        
-            <ion-item *ngFor="let doador of doadores">
-              <ion-icon name="arrow-forward"></ion-icon><ion-label class="item-nome">Complemento: {{ doador.complemento }}</ion-label>
-            </ion-item>
-=======
           <ion-list *ngFor="let doador of doadores">
             <div *ngIf="doador.userId === currentUID">
               <ion-item>
@@ -124,7 +74,6 @@
                 <ion-label class="item-nome">Complemento: {{ doador.complemento }}</ion-label>
               </ion-item>
             </div>
->>>>>>> 44e95a056a3c41edfd91f5ce33931412b1b89a88
           </ion-list>
       <ion-footer>
         <ion-grid>
@@ -141,23 +90,9 @@
 
     <!--Informações de Equipamentos-->
     <ion-slide>
-<<<<<<< HEAD
-      <ion-card>
+      <ion-card style="width: 100%;">
         <img src="assets/imgs/bg-slide-equipaments.png"/>
         <ion-card-header>
-          <ion-card-subtitle>Perfil</ion-card-subtitle>
-          <ion-card-title><h5 class="featured-title" *ngFor="let doador of doadores">Informações da Doação</h5></ion-card-title>
-        </ion-card-header>
-
-          <ion-list>
-            <ion-item *ngFor="let doador of doadores">
-              <ion-icon name="arrow-forward"></ion-icon><ion-label class="item-nome">Equipamentos: {{ doador.equipamentos }}</ion-label>
-            </ion-item>
-=======
-      <ion-card style="width: 100%;">
-        <ion-card-header>
-          <ion-card-subtitle>Perfil</ion-card-subtitle>
-          <img src="assets/imgs/bg-slide-doador.png"/>
           <ion-card-title><h5 class="featured-title">Equipamentos</h5></ion-card-title>
         </ion-card-header>
 
@@ -167,7 +102,6 @@
                 <ion-label class="item-nome">Equipamentos: {{ doador.equipamentos }}</ion-label>
               </ion-item>
             </div>
->>>>>>> 44e95a056a3c41edfd91f5ce33931412b1b89a88
           </ion-list>
 
       <ion-footer>
